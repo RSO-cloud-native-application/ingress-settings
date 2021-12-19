@@ -23,3 +23,7 @@ spec:
             backend:
               serviceName: loans
               servicePort: 8080
+          - path: /uniborrow-chat(/|$)(.*)
+            backend:
+              serviceName: uniborrow-chat
+              servicePort: 8085
