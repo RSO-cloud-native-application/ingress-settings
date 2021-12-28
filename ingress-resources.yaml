@@ -27,3 +27,7 @@ spec:
             backend:
               serviceName: uniborrow-chat
               servicePort: 8085
+          - path: /
+            backend:
+              serviceName: uniborrow-frontend
+              servicePort: 3000
