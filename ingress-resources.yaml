@@ -6,28 +6,28 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
     - http:
         paths:
-          - path: /uniborrow-users(/|$)(.*)
+          - path: /uniborrow-users(?:/|$)(.*)
             backend:
               serviceName: uniborrow-users
               servicePort: 8080
-          - path: /uniborrow-items(/|$)(.*)
+          - path: /uniborrow-items(?:/|$)(.*)
             backend:
               serviceName: items
               servicePort: 8080
-          - path: /uniborrow-loans(/|$)(.*)
+          - path: /uniborrow-loans(?:/|$)(.*)
             backend:
               serviceName: uniborrow-loans
               servicePort: 8080
-          - path: /uniborrow-chat(/|$)(.*)
+          - path: /uniborrow-chat(?:/|$)(.*)
             backend:
               serviceName: uniborrow-chat
               servicePort: 8085
-          - path: /
+          - path: /(.*)
             backend:
               serviceName: uniborrow-frontend
-              servicePort: 3000
+              servicePort: 80
