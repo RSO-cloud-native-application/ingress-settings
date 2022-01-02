@@ -35,6 +35,10 @@ spec:
             backend:
               serviceName: uniborrow-reviews
               servicePort: 8080
+          - path: /uniborrow-ads(?:/|$)(.*)
+            backend:
+              serviceName: uniborrow-ads
+              servicePort: 8080
           - path: /(.*)
             backend:
               serviceName: uniborrow-frontend
