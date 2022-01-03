@@ -43,6 +43,10 @@ spec:
             backend:
               serviceName: uniborrow-ads
               servicePort: 8080
+          - path: /uniborrow-blogs(?:/|$)(.*)
+            backend:
+              serviceName: blogs
+              servicePort: 8080
           - path: /(.*)
             backend:
               serviceName: uniborrow-frontend
