@@ -6,44 +6,44 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /$1$2
 spec:
   rules:
     - http:
         paths:
-          - path: /((?:uniborrow-users/openapi.*)|(?:uniborrow-users(?:/|$)(.*)))
+          - path:  /(?:(uniborrow-users/openapi.*)|(?:uniborrow-users)(?:/|$)(.*))
             backend:
               serviceName: uniborrow-users
               servicePort: 8080
-          - path: /((?:uniborrow-items/openapi.*)|(?:uniborrow-items(?:/|$)(.*)))
+          - path:  /(?:(uniborrow-items/openapi.*)|(?:uniborrow-items)(?:/|$)(.*))
             backend:
               serviceName: items
               servicePort: 8080
-          - path: /((?:uniborrow-requests/openapi.*)|(?:uniborrow-requests(?:/|$)(.*)))
+          - path: /(?:(uniborrow-requests/openapi.*)|(?:uniborrow-requests)(?:/|$)(.*))
             backend:
               serviceName: requests
               servicePort: 8080
-          - path: /((?:uniborrow-loans/openapi.*)|(?:uniborrow-loans(?:/|$)(.*)))
+          - path: /(?:(uniborrow-loans/openapi.*)|(?:uniborrow-loans)(?:/|$)(.*))
             backend:
               serviceName: uniborrow-loans
               servicePort: 8080
-          - path: /((?:uniborrow-chat/openapi.*)|(?:uniborrow-chat(?:/|$)(.*)))
+          - path: /(?:(uniborrow-chat/openapi.*)|(?:uniborrow-chat)(?:/|$)(.*))
             backend:
               serviceName: uniborrow-chat
               servicePort: 8085
-          - path: /((?:uniborrow-cash/openapi.*)|(?:uniborrow-cash(?:/|$)(.*)))
+          - path: /(?:(uniborrow-cash/openapi.*)|(?:uniborrow-cash)(?:/|$)(.*))
             backend:
               serviceName: uniborrow-cash
               servicePort: 8080
-          - path: /((?:uniborrow-reviews/openapi.*)|(?:uniborrow-reviews(?:/|$)(.*)))
+          - path: /(?:(uniborrow-reviews/openapi.*)|(?:uniborrow-reviews)(?:/|$)(.*))
             backend:
               serviceName: uniborrow-reviews
               servicePort: 8080
-          - path: /((?:uniborrow-ads/openapi.*)|(?:uniborrow-ads(?:/|$)(.*)))
+          - path: /(?:(uniborrow-ads/openapi.*)|(?:uniborrow-ads)(?:/|$)(.*))
             backend:
               serviceName: uniborrow-ads
               servicePort: 8080
-          - path: /((?:uniborrow-blogs/openapi.*)|(?:uniborrow-blogs(?:/|$)(.*)))
+          - path: /(?:(uniborrow-blogs/openapi.*)|(?:uniborrow-blogs)(?:/|$)(.*))
             backend:
               serviceName: blogs
               servicePort: 8080
