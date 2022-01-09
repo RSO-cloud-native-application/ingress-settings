@@ -23,7 +23,7 @@ spec:
             backend:
               serviceName: requests
               servicePort: 8080
-          - path: /uniborrow-loans(?:/|$)(.*)
+          - path: /((?:uniborrow-loans/openapi.*)|(?:uniborrow-loans(?:/|$)(.*)))
             backend:
               serviceName: uniborrow-loans
               servicePort: 8080
@@ -31,7 +31,7 @@ spec:
             backend:
               serviceName: uniborrow-chat
               servicePort: 8085
-          - path: /(?:(uniborrow-cash-openapi.*)|(?:uniborrow-cash)(?:/|$)(.*)?)
+          - path: /((?:uniborrow-cash/openapi.*)|(?:uniborrow-cash(?:/|$)(.*)))
             backend:
               serviceName: uniborrow-cash
               servicePort: 8080
@@ -39,7 +39,7 @@ spec:
             backend:
               serviceName: uniborrow-reviews
               servicePort: 8080
-          - path: /uniborrow-ads(?:/|$)(.*)
+          - path: /((?:uniborrow-ads/openapi.*)|(?:uniborrow-ads(?:/|$)(.*)))
             backend:
               serviceName: uniborrow-ads
               servicePort: 8080
