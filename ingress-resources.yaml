@@ -31,7 +31,7 @@ spec:
             backend:
               serviceName: uniborrow-chat
               servicePort: 8085
-          - path: /uniborrow-cash(?:/|$)(.*)
+          - path: /(?:(uniborrow-cash-openapi.*)|(?:uniborrow-cash)(?:/|$)(.*)?)
             backend:
               serviceName: uniborrow-cash
               servicePort: 8080
