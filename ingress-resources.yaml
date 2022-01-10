@@ -17,11 +17,11 @@ spec:
               servicePort: 8080
           - path:  /(?:(uniborrow-items/openapi.*)|(?:uniborrow-items)(?:/|$)(.*))
             backend:
-              serviceName: items
+              serviceName: uniborrow-items
               servicePort: 8080
           - path: /(?:(uniborrow-requests/openapi.*)|(?:uniborrow-requests)(?:/|$)(.*))
             backend:
-              serviceName: requests
+              serviceName: uniborrow-requests
               servicePort: 8080
           - path: /(?:(uniborrow-loans/openapi.*)|(?:uniborrow-loans)(?:/|$)(.*))
             backend:
@@ -45,7 +45,7 @@ spec:
               servicePort: 8080
           - path: /(?:(uniborrow-blogs/openapi.*)|(?:uniborrow-blogs)(?:/|$)(.*))
             backend:
-              serviceName: blogs
+              serviceName: uniborrow-blogs
               servicePort: 8080
           - path: /(.*)
             backend:
